@@ -12,7 +12,7 @@ The base script is the automatic_control.py file from CARLA Python API example f
        - Lane Invasion Sensor: No modifications were done to this particular sensor. The purpose is to detect lane boundary crossing.
    - The depth and semantic LiDAR sensors were implemented, but they were not used.
    - Bounding Box:
-        -
-
+        -This adapts code from:  https://github.com/Mofeed-Chaar/Improving-bouning-box-in-Carla-simulator/tree/main
+                -Main functions of this class include: calculating the intrinsic camera matrix, 
   - Set the ego vehicle to a Telsa Model 3
   - Shifted the camera
