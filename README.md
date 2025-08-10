@@ -4,7 +4,7 @@ The base script is the automatic_control.py file from CARLA Python API example f
   - Preset Weather Conditions
   - Unified walker scenario: the walker spawns at defined location (x=114, y=2. z=1.0) and target (x=100, y=2, z=1.0)
   - Many sensors have been incorporated and activated.
-        -RGB: serves as the primary sensor for pedestrian detection
+        -RGB: serves as the primary sensor for pedestrian detection. Futhermore, *geometric filtering was applied to reduce the number of false positives.* Future studies should focus on more advace filtering mechanisms such as temporal tracking, this will help to address concerns regarding motion dynamics which causes mislocalized false negatives. *Reducing the number of false negatives is critical for autonomous vehicle related perception systems.*
         -Segementation: serves to filter detections to ensure higher accuracy, precision, and precision. Speficially, uses the fiter_boxes() method from the bounding box class. **At the moment, this sensor is problematic because it is causing detection to essentially become non-existent after the two initial frames.**
         - LiDAR and RADAR:Generally, RADAR is better suited in long-distance situations and is less affected by weather conditions. Specifically, RADAR uses radio frequency travel time to measure distance. Whereas, LiDAR uses well-suited in short-distance situations and is more affected by weather conditions. LiDAR measures distance by using laser pulses. Therefore, sensor fusion enhances detection and confidence. DBSCAN clustering method is used for the point cloud data to detect movements and clusters.
        - Collision Sensor: Modifications include terminating the simulation if collision is longer than six frames.
@@ -14,5 +14,5 @@ The base script is the automatic_control.py file from CARLA Python API example f
    - Bounding Box:
         -This adapts code from:  https://github.com/Mofeed-Chaar/Improving-bouning-box-in-Carla-simulator/tree/main
                 -Main functions of this class include: calculating the intrinsic camera matrix, projects 3D-bounding boxes into 2D plane, assigns segmentation color for each class [car, truck, bus, van, bicycle, motorcycle, walker, and street_light] which is used for semantic filtering (several thresholds are set in place to trigger this filtering mechanism), calculates the IOU (intersection over union), calculates the visibility threshold for objects, prevents negative coordinates meaning that object location will not be behind the sensor and/or the camera (also known as phantom detections), and finally bounding boxes are normalized converted to YOLO-format. 
-  - Set the ego vehicle to a Telsa Model 3
+  - 
   - Shifted the camera
