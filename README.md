@@ -17,4 +17,3 @@ The base script is the automatic_control.py file from CARLA Python API example f
   - Most importantly, metadata collection has been implemented and attributes such as: [frame, timestamp, weather, num_pedestrians, ego_x, ego_y, ego_z, ego_pitch, ego_yaw, ego_roll, cam_x, cam_y, cam_z, cam_pitch, cam_yaw, cam_roll, ego_speed_kmh, collision_type, lane_invasion, yolo_labels, walker_x, walker_y, walker_z, walker_speed_kmh, FOV].
   - For easy debugging and analysis, two sets of images are being stored per simulation: raw_RGB images and labelled_RGB images (bounding boxes are drawn onto the image via CV2).
   - Shifted the camera, so it's at the driver's eye level.
-  - 
